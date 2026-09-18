@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Birthday Love ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Quicksand", sans-serif;
+    color: #574347;
+
+    background:
+        radial-gradient(circle at 12% 15%, rgba(255,255,255,.75) 0 3px, transparent 4px),
+        radial-gradient(circle at 87% 12%, rgba(255,255,255,.65) 0 3px, transparent 4px),
+        linear-gradient(135deg, #f8e8e9, #f8f0df, #e4efdf);
+
+    overflow-x: hidden;
+}
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .6;
+    animation: float 7s ease-in-out infinite;
+}
+
+.f1 { top: 8%; left: 5%; font-size: 24px; }
+.f2 { top: 18%; right: 7%; font-size: 20px; animation-delay: 1s; }
+.f3 { top: 45%; left: 3%; font-size: 18px; animation-delay: 2s; }
+.f4 { top: 65%; right: 4%; font-size: 25px; animation-delay: 3s; }
+.f5 { bottom: 8%; left: 8%; font-size: 20px; animation-delay: 4s; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+.container {
+    width: min(900px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    padding: 35px 0 70px;
+}
+
+.card {
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 32px;
+    padding: 38px 30px;
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 18px 50px rgba(92,61,68,.12),
+        inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+h1, h2 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 70px);
+    margin: 0 0 8px;
+    color: #6d5058;
+}
+
+h2 {
+    font-size: 36px;
+    color: #6d5058;
+    margin-top: 5px;
+}
+
+.subtitle {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    background: #cf8f9e;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(170,100,120,.22);
+}
+
+.secondary {
+    background: #dfead8;
+    color: #56684f;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* START SCREEN */
+
+.start-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.start-card {
+    width: min(560px, 100%);
+    text-align: center;
+}
+
+.big-heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+.question {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(30px, 6vw, 45px);
+    color: #6d5058;
+    margin: 20px 0;
+}
+
+.start-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+
+/* SEPARATE NO SCREEN */
+
+.no-screen {
+    display: none;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.no-card {
+    width: min(500px, 100%);
+}
+
+.sad {
+    font-size: 75px;
+    animation: tinyBounce 1.5s infinite;
+}
+
+@keyframes tinyBounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.please {
+    font-family: "DM Serif Display", serif;
+    font-size: 48px;
+    color: #76545e;
+    margin: 15px 0 5px;
+}
+
+.try-text {
+    font-size: 17px;
+    color: #806c70;
+    margin-bottom: 25px;
+}
+
+
+/* MAIN PAGE */
+
+.main-page {
+    display: none;
+}
+
+
+/* BIRTHDAY HEADER */
+
+.birthday-top {
+    text-align: center;
+    padding: 25px 10px 12px;
+}
+
+.birthday-top .tiny {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #96717a;
+}
+
+.birthday-top h1 {
+    margin-top: 8px;
+}
+
+.birthday-top .stars {
+    font-size: 22px;
+    letter-spacing: 8px;
+    margin: 10px 0;
+}
+
+.birthday-note {
+    display: inline-block;
+    background: #fff;
+    padding: 9px 18px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(100,65,75,.08);
+}
+
+
+/* CAKE BUILDER */
+
+.cake-builder {
+    text-align: center;
+}
+
+.cake-intro {
+    max-width: 620px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.option-group {
+    background: rgba(255,255,255,.72);
+    border-radius: 22px;
+    padding: 17px;
+    text-align: left;
+    border: 1px solid #ead9d5;
+}
+
+.option-group h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    color: #6f565b;
+}
+
+.option {
+    display: inline-block;
+    margin: 4px;
+}
+
+.option input {
+    display: none;
+}
+
+.option label {
+    display: inline-block;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: #f2e9e3;
+    cursor: pointer;
+    font-size: 13px;
+    transition: .2s;
+}
+
+.option input:checked + label {
+    background: #cf8f9e;
+    color: white;
+    box-shadow: 0 4px 12px rgba(180,100,120,.2);
+}
+
+
+/* PIXEL CAKE */
+
+.cake-stage {
+    min-height: 350px;
+    margin: 28px auto 15px;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.7) 0 3px, transparent 4px),
+        radial-gradient(circle at 80% 35%, rgba(255,255,255,.7) 0 3px, transparent 4px),
+        #fff8f3;
+
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border: 2px dashed #e6c9ca;
+}
+
+/*
+    PIXEL ART CAKE
+    Crisp edges + no rounded corners + blocky layers
+*/
+
+.pixel-cake {
+    width: 300px;
+    height: 260px;
+    position: relative;
+    image-rendering: pixelated;
+    transform: scale(1.05);
+}
+
+/* plate */
+
+.plate {
+    position: absolute;
+    width: 270px;
+    height: 24px;
+    bottom: 17px;
+    left: 15px;
+    background: #b98d97;
+    box-shadow:
+        0 8px 0 #8f6971,
+        8px 0 0 #b98d97,
+        -8px 0 0 #b98d97;
+}
+
+
+/* bottom cake layer */
+
+.pixel-bottom {
+    position: absolute;
+    width: 220px;
+    height: 68px;
+    left: 40px;
+    bottom: 42px;
+
+    background: #c98d65;
+
+    border: 8px solid #714d45;
+
+    box-shadow:
+        inset 0 9px 0 #e0aa80,
+        inset 0 -9px 0 #a96f57;
+}
+
+
+/* cream between layers */
+
+.pixel-middle-cream {
+    position: absolute;
+    width: 220px;
+    height: 22px;
+    left: 40px;
+    bottom: 102px;
+
+    background: #f8e8df;
+
+    border-left: 8px solid #714d45;
+    border-right: 8px solid #714d45;
+
+    box-shadow:
+        0 8px 0 #dfabb6,
+        0 -5px 0 #fff7f1;
+}
+
+
+/* upper layer */
+
+.pixel-top {
+    position: absolute;
+    width: 200px;
+    height: 58px;
+    left: 50px;
+    bottom: 119px;
+
+    background: #d99aa8;
+
+    border: 8px solid #714d45;
+
+    box-shadow:
+        inset 0 9px 0 #e9b6c0,
+        inset 0 -8px 0 #bb7787;
+}
+
+
+/* frosting */
+
+.pixel-frosting {
+    position: absolute;
+    width: 200px;
+    height: 25px;
+    left: 50px;
+    bottom: 166px;
+
+    background: #fff1eb;
+
+    border-left: 8px solid #714d45;
+    border-right: 8px solid #714d45;
+
+    box-shadow:
+        0 7px 0 #e7bbc4;
+}
+
+
+/* top */
+
+.pixel-topper {
+    position: absolute;
+    width: 190px;
+    height: 38px;
+    left: 55px;
+    bottom: 185px;
+
+    background: #fff1eb;
+
+    border: 8px solid #714d45;
+
+    box-shadow:
+        inset 0 -8px 0 #e5b4be;
+}
+
+
+/* pixel decorations */
+
+.pixel-toppings {
+    position: absolute;
+    left: 70px;
+    bottom: 188px;
+    width: 160px;
+
+    text-align: center;
+
+    font-family: monospace;
+    font-size: 21px;
+    letter-spacing: 3px;
+
+    z-index: 5;
+}
+
+
+/* candle */
+
+.pixel-candle {
+    position: absolute;
+    width: 12px;
+    height: 47px;
+    left: 144px;
+    bottom: 218px;
+
+    background: #d18b9b;
+
+    border: 4px solid #714d45;
+
+    box-shadow:
+        inset 4px 0 0 #e7b4be;
+}
+
+
+/* pixel flame */
+
+.pixel-flame {
+    position: absolute;
+    left: 139px;
+    bottom: 263px;
+
+    font-family: monospace;
+    font-size: 24px;
+
+    image-rendering: pixelated;
+
+    animation: pixelFlicker .7s infinite alternate;
+}
+
+@keyframes pixelFlicker {
+    from {
+        transform: scale(.9);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+
+/* CAKE TEXT */
+
+.cake-name {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    margin-top: 8px;
+    color: #76545d;
+}
+
+.bake-message {
+    min-height: 28px;
+    font-weight: 600;
+    color: #8e6871;
+    margin: 10px 0 18px;
+}
+
+
+/* LETTER */
+
+.letter-card {
+    background: #fffaf5;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-card:before,
+.letter-card:after {
+    content: "♡";
+    position: absolute;
+    color: #dcb5bd;
+    font-size: 60px;
+    opacity: .35;
+}
+
+.letter-card:before {
+    top: 10px;
+    left: 15px;
+}
+
+.letter-card:after {
+    bottom: 5px;
+    right: 15px;
+}
+
+.letter-date {
+    text-align: center;
+    color: #96727a;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.letter {
+    max-width: 690px;
+    margin: 28px auto;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #5b4c4f;
+}
+
+.signature {
+    text-align: right;
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    color: #805d67;
+}
+
+
+/* GIFT */
+
+.gift {
+    text-align: center;
+}
+
+.gift-box {
+    margin: 25px auto 20px;
+    width: 145px;
+    height: 120px;
+    position: relative;
+    animation: giftFloat 3s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+    0%,100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.gift-body {
+    width: 120px;
+    height: 82px;
+    background: #c88d9b;
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    border-radius: 5px 5px 12px 12px;
+}
+
+.gift-lid {
+    width: 140px;
+    height: 28px;
+    background: #b77887;
+    position: absolute;
+    top: 23px;
+    left: 2px;
+    border-radius: 7px;
+}
+
+.ribbon-v {
+    width: 18px;
+    height: 100px;
+    background: #f1d4b5;
+    position: absolute;
+    left: 51px;
+    top: 25px;
+}
+
+.ribbon-h {
+    width: 140px;
+    height: 13px;
+    background: #f1d4b5;
+    position: absolute;
+    top: 68px;
+    left: 2px;
+}
+
+.bow {
+    position: absolute;
+    top: 3px;
+    left: 42px;
+    font-size: 40px;
+    color: #efc8a8;
+}
+
+
+/* SPOTIFY */
+
+.spotify-button {
+    display: inline-block;
+    text-decoration: none;
+    background: #789878;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-top: 12px;
+    transition: .25s;
+    box-shadow: 0 8px 20px rgba(90,120,85,.18);
+}
+
+.spotify-button:hover {
+    transform: translateY(-3px) rotate(-1deg);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 650px) {
+
+    .card {
+        padding: 28px 19px;
+        border-radius: 25px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .cake-stage {
+        min-height: 320px;
+    }
+
+    .pixel-cake {
+        transform: scale(.82);
+    }
+
+    .letter {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .please {
+        font-size: 42px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="floating f1">♡</div>
+<div class="floating f2">✦</div>
+<div class="floating f3">❀</div>
+<div class="floating f4">♡</div>
+<div class="floating f5">✧</div>
+
+
+<!-- START SCREEN -->
+
+<section class="start-screen" id="startScreen">
+
+    <div class="card start-card">
+
+        <div class="big-heart">♡</div>
+
+        <div class="question">
+            do you wanna read this letter?
+        </div>
+
+        <p class="subtitle">
+            there's a tiny little something waiting for you inside...
+        </p>
+
+        <div class="start-buttons">
+
+            <button class="primary" onclick="openLetter()">
+                Yes, of course ♡
+            </button>
+
+            <button class="secondary" onclick="showNo()">
+                No 🥺
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEPARATE PLEASE SCREEN -->
+
+<section class="no-screen" id="noScreen">
+
+    <div class="card no-card">
+
+        <div class="sad">
+            🥺💔
+        </div>
+
+        <div class="please">
+            Pleaseee...
+        </div>
+
+        <p class="try-text">
+            Pretty please, my love? 🥺💗
+        </p>
+
+        <button class="primary" onclick="openLetter()">
+            Okay okay... try again ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN PAGE -->
+
+<main class="main-page" id="mainPage">
+
+<div class="container">
+
+
+    <!-- BIRTHDAY -->
+
+    <section class="birthday-top">
+
+        <div class="tiny">
+            a little birthday surprise ✧
+        </div>
+
+        <h1>
+            Happy Birthday, My Love 🎂♡
+        </h1>
+
+        <div class="stars">
+            ✦ ♡ ✧ ♡ ✦
+        </div>
+
+        <div class="birthday-note">
+            made with a ridiculous amount of love ♡
+        </div>
+
+    </section>
+
+
+    <!-- CAKE BUILDER -->
+
+    <section class="card cake-builder">
+
+        <h2>
+            Let's Bake Your Cake 🎂
+        </h2>
+
+        <p class="cake-intro">
+            Since it's your birthday, you get to design your very own cake.
+            Pick absolutely everything — from the sponge to the cream,
+            filling, toppings and style. Then I'll bake it for you ♡
+        </p>
+
+
+        <!-- PIXEL CAKE -->
+
+        <div class="cake-stage">
+
+            <div class="pixel-cake">
+
+                <div class="plate"></div>
+
+                <div class="pixel-bottom"></div>
+
+                <div class="pixel-middle-cream"></div>
+
+                <div class="pixel-top"></div>
+
+                <div class="pixel-frosting"></div>
+
+                <div class="pixel-topper"></div>
+
+                <div class="pixel-toppings" id="toppings">
+                    🍓 🍓 🍓
+                </div>
+
+                <div class="pixel-candle"></div>
+
+                <div class="pixel-flame">
+                    🔥
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cake-name" id="cakeName">
+            Vanilla Cute & Soft Cake ♡
+        </div>
+
+        <div class="bake-message" id="bakeMessage">
+            Choose your ingredients below ✧
+        </div>
+
+
+        <div class="options">
+
+
+            <!-- SPONGE -->
+
+            <div class="option-group">
+
+                <h3>🍰 Choose your sponge</h3>
+
+                <div class="option">
+                    <input type="radio" name="sponge" id="vanilla" checked onchange="updateCake()">
+                    <label for="vanilla">Vanilla</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="sponge" id="chocolate" onchange="updateCake()">
+                    <label for="chocolate">Chocolate</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="sponge" id="redvelvet" onchange="updateCake()">
+                    <label for="redvelvet">Red Velvet</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="sponge" id="strawberry" onchange="updateCake()">
+                    <label for="strawberry">Strawberry</label>
+                </div>
+
+            </div>
+
+
+            <!-- CREAM -->
+
+            <div class="option-group">
+
+                <h3>☁️ Choose your cream</h3>
+
+                <div class="option">
+                    <input type="radio" name="cream" id="whipped" checked onchange="updateCake()">
+                    <label for="whipped">Whipped Cream</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="cream" id="buttercream" onchange="updateCake()">
+                    <label for="buttercream">Buttercream</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="cream" id="pinkcream" onchange="updateCake()">
+                    <label for="pinkcream">Strawberry Cream</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="cream" id="mintcream" onchange="updateCake()">
+                    <label for="mintcream">Mint Cream</label>
+                </div>
+
+            </div>
+
+
+            <!-- FILLING -->
+
+            <div class="option-group">
+
+                <h3>💗 Choose your filling</h3>
+
+                <div class="option">
+                    <input type="radio" name="filling" id="strawberryfill" checked onchange="updateCake()">
+                    <label for="strawberryfill">Strawberry</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="filling" id="chocolatefill" onchange="updateCake()">
+                    <label for="chocolatefill">Chocolate</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="filling" id="caramel" onchange="updateCake()">
+                    <label for="caramel">Caramel</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="filling" id="none" onchange="updateCake()">
+                    <label for="none">No Filling</label>
+                </div>
+
+            </div>
+
+
+            <!-- TOPPINGS -->
+
+            <div class="option-group">
+
+                <h3>🍓 Choose your toppings</h3>
+
+                <div class="option">
+                    <input type="radio" name="topping" id="berries" checked onchange="updateCake()">
+                    <label for="berries">Strawberries</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="topping" id="cherries" onchange="updateCake()">
+                    <label for="cherries">Cherries</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="topping" id="sprinkles" onchange="updateCake()">
+                    <label for="sprinkles">Sprinkles</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="topping" id="flowers" onchange="updateCake()">
+                    <label for="flowers">Tiny Flowers</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="topping" id="hearts" onchange="updateCake()">
+                    <label for="hearts">♡ Hearts</label>
+                </div>
+
+            </div>
+
+
+            <!-- STYLE -->
+
+            <div class="option-group">
+
+                <h3>🎀 Choose your cake style</h3>
+
+                <div class="option">
+                    <input type="radio" name="style" id="cute" checked onchange="updateCake()">
+                    <label for="cute">Cute & Soft</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="style" id="vintage" onchange="updateCake()">
+                    <label for="vintage">Vintage</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="style" id="minimal" onchange="updateCake()">
+                    <label for="minimal">Minimal</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="style" id="dreamy" onchange="updateCake()">
+                    <label for="dreamy">Dreamy</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <br>
+
+        <button class="primary" onclick="bakeCake()">
+            ✨ Bake My Cake ✨
+        </button>
+
+    </section>
+
+
+    <!-- LETTER -->
+
+    <section class="card letter-card">
+
+        <div class="letter-date">
+            17 September 2026 ♡
+        </div>
+
+        <div class="letter">
+
+            <p>
+                To my superhero,
+            </p>
+
+            <p>
+                I am so glad to have you in my life, i can not ever put into
+                words how i feel for you cs it's not possible but the past few
+                months with you have been the absolutely best days of my life
+                idk what i did to deserve someone as amazing as you.
+            </p>
+
+            <p>
+                you're the best boyfriend ever and i hope to spend the rest
+                of my lifetime with you my love.
+            </p>
+
+            <p>
+                without you im incomplete. youre a part of me now and theres
+                no escape 😘.
+            </p>
+
+            <p>
+                i love you soooo much
+            </p>
+
+            <div class="signature">
+                forever yours, my love ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GIFT -->
+
+    <section class="card gift">
+
+        <h2>
+            A Little Gift For You ♡
+        </h2>
+
+        <div class="gift-box">
+
+            <div class="bow">🎀</div>
+            <div class="gift-lid"></div>
+            <div class="gift-body"></div>
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+
+        </div>
+
+        <p class="subtitle">
+            a playlist of songs that remind me of you ♡
+        </p>
+
+        <a
+            class="spotify-button"
+            href="https://open.spotify.com/playlist/6D86Jd2FeXGbQal7SqOJAJ?si=44953dbb47204f31&pt=98da276c5fcfbdbb3a26ddbb0362313f"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ♫ Open Your Playlist on Spotify
+        </a>
+
+        <p style="font-size:13px; color:#91787d; margin-top:16px;">
+            you can open it in Spotify and save it to your library ♡
+        </p>
+
+    </section>
+
+
+    <!-- FINAL NOTE -->
+
+    <section class="card center">
+
+        <div style="font-size:35px;">
+            ♡ ✧ ♡
+        </div>
+
+        <h2 style="margin-bottom:8px;">
+            one last thing...
+        </h2>
+
+        <p class="subtitle">
+            I hope this little corner of the internet makes you smile
+            even half as much as you make me smile. ♡
+        </p>
+
+        <div style="
+            font-family:'DM Serif Display',serif;
+            font-size:25px;
+            color:#805d67;
+        ">
+            happy birthday, my love ♡
+        </div>
+
+        <div style="margin-top:18px;font-size:20px;">
+            🎂 ✨ 🌷 💗 ✨ 🎂
+        </div>
+
+    </section>
+
+</div>
+</main>
+
+
+<script>
+
+/* OPEN LETTER */
+
+function openLetter() {
+
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("noScreen").style.display = "none";
+    document.getElementById("mainPage").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+
+/* SHOW SEPARATE PLEASE SCREEN */
+
+function showNo() {
+
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("noScreen").style.display = "flex";
+
+}
+
+
+/* GET SELECTED OPTION */
+
+function getSelected(name) {
+
+    return document.querySelector(
+        'input[name="' + name + '"]:checked'
+    ).id;
+
+}
+
+
+/* UPDATE CAKE */
+
+function updateCake() {
+
+    const sponge = getSelected("sponge");
+    const cream = getSelected("cream");
+    const topping = getSelected("topping");
+
+    const bottom = document.querySelector(".pixel-bottom");
+    const top = document.querySelector(".pixel-top");
+    const frosting = document.querySelector(".pixel-frosting");
+    const topper = document.querySelector(".pixel-topper");
+    const middle = document.querySelector(".pixel-middle-cream");
+    const toppings = document.getElementById("toppings");
+
+
+    /* sponge */
+
+    const spongeColors = {
+
+        vanilla: "#c9956c",
+        chocolate: "#70473d",
+        redvelvet: "#a94e55",
+        strawberry: "#d9959d"
+
+    };
+
+    bottom.style.background = spongeColors[sponge];
+    top.style.background = spongeColors[sponge];
+
+
+    /* cream */
+
+    const creamColors = {
+
+        whipped: "#fff0e9",
+        buttercream: "#e9d1aa",
+        pinkcream: "#e5a8b2",
+        mintcream: "#bcd6c1"
+
+    };
+
+    frosting.style.background = creamColors[cream];
+    topper.style.background = creamColors[cream];
+    middle.style.background = creamColors[cream];
+
+
+    /* toppings */
+
+    const toppingSymbols = {
+
+        berries: "🍓 🍓 🍓",
+        cherries: "🍒 🍒 🍒",
+        sprinkles: "▪ ✦ ▪",
+        flowers: "✿ ❀ ✿",
+        hearts: "♥ ♥ ♥"
+
+    };
+
+    toppings.innerHTML = toppingSymbols[topping];
+
+}
+
+
+/* BAKE CAKE */
+
+function bakeCake() {
+
+    const sponge = getSelected("sponge");
+    const cream = getSelected("cream");
+    const filling = getSelected("filling");
+    const topping = getSelected("topping");
+    const style = getSelected("style");
+
+
+    const cakeName = document.getElementById("cakeName");
+    const message = document.getElementById("bakeMessage");
+
+
+    const spongeNames = {
+
+        vanilla: "Vanilla",
+        chocolate: "Chocolate",
+        redvelvet: "Red Velvet",
+        strawberry: "Strawberry"
+
+    };
+
+
+    const creamNames = {
+
+        whipped: "Whipped Cream",
+        buttercream: "Buttercream",
+        pinkcream: "Strawberry Cream",
+        mintcream: "Mint Cream"
+
+    };
+
+
+    const fillingNames = {
+
+        strawberryfill: "Strawberry Filling",
+        chocolatefill: "Chocolate Filling",
+        caramel: "Caramel",
+        none: "No Filling"
+
+    };
+
+
+    const toppingNames = {
+
+        berries: "Strawberries",
+        cherries: "Cherries",
+        sprinkles: "Sprinkles",
+        flowers: "Tiny Flowers",
+        hearts: "♡ Hearts"
+
+    };
+
+
+    const styleNames = {
+
+        cute: "Cute & Soft",
+        vintage: "Vintage",
+        minimal: "Minimal",
+        dreamy: "Dreamy"
+
+    };
+
+
+    cakeName.innerHTML =
+        spongeNames[sponge] +
+        " " +
+        styleNames[style] +
+        " Cake ♡";
+
+
+    message.innerHTML =
+        "✦ " +
+        spongeNames[sponge] +
+        " sponge + " +
+        creamNames[cream] +
+        " + " +
+        fillingNames[filling] +
+        " + " +
+        toppingNames[topping] +
+        " ✦";
+
+
+    /* PIXEL CELEBRATION */
+
+    for (let i = 0; i < 14; i++) {
+
+        const pixel = document.createElement("div");
+
+        pixel.innerHTML =
+            ["♥","✦","▪","♡","✧"][Math.floor(Math.random()*5)];
+
+        pixel.style.position = "fixed";
+        pixel.style.left = (Math.random() * 100) + "vw";
+        pixel.style.bottom = "-20px";
+        pixel.style.fontSize = (15 + Math.random()*18) + "px";
+        pixel.style.zIndex = "99";
+        pixel.style.pointerEvents = "none";
+        pixel.style.color = "#cf8f9e";
+        pixel.style.transition =
+            "transform 2.5s ease, opacity 2.5s ease";
+
+        document.body.appendChild(pixel);
+
+        setTimeout(() => {
+
+            pixel.style.transform =
+                "translateY(-" +
+                (window.innerHeight + 100) +
+                "px)";
+
+            pixel.style.opacity = "0";
+
+        }, 50);
+
+
+        setTimeout(() => {
+
+            pixel.remove();
+
+        }, 2700);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+
